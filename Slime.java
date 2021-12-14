@@ -13,8 +13,6 @@ public class Slime extends Actor
   private int acceleration = 1;
   private int jumpStrength = 15;
     /**
-     * Act - do whatever the Duke wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
