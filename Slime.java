@@ -8,10 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Slime extends Actor
 {
-  private int speed = 5;
+  private int speed = 7;
   private int vSpeed = 0;
   private int acceleration = 1;
-  private int jumpStrength = 15;
+  private int jumpStrength = 20;
     /**
      */
     public void act() 
@@ -19,12 +19,13 @@ public class Slime extends Actor
         checkKeys();
         onGround();
         checkFall();
+        checkForFall();
     }
     
      public boolean onGround()
     {
         Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Platform.class);
-        return under != null;
+         return under != null;
     }
     
     public void checkKeys()
@@ -78,4 +79,12 @@ public class Slime extends Actor
         }
     }
     
+    public void checkForFall()
+    {
+        if (getY() >= 643)
+        {
+            setLocation(20, 595);
+        }
+    }
+
 }
