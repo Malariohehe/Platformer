@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Slime extends Actor
 {
   private int speed = 7;
-  private int vSpeed = 0;
+  private int vSpeed = 1;
   private int acceleration = 1;
   private int jumpStrength = 20;
     /**
@@ -20,6 +20,8 @@ public class Slime extends Actor
         onGround();
         checkFall();
         checkForFall();
+        win();
+        lose();
     }
     
      public boolean onGround()
@@ -59,6 +61,21 @@ public class Slime extends Actor
     {
         setLocation (getX(), getY() + vSpeed);
         vSpeed += acceleration;
+        detectPlatform();
+    }
+    
+    public void detectPlatform()
+
+
+    {
+	for (int i = 0; i < vSpeed; i++)
+	{
+		Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Platform.class);
+		if (under != null)
+		{
+			vSpeed = i;
+		}
+	}
     }
     
      public void jump()
@@ -86,5 +103,26 @@ public class Slime extends Actor
             setLocation(20, 595);
         }
     }
-
+    public void win()
+    {
+        Actor Home = getOneIntersectingObject(Home.class);
+        if (Home != null)
+        {
+            Greenfoot.setWorld(new Win());
+            Greenfoot.stop();
+        }
+    }
+    public void lose()
+    {
+        Actor Bean = getOneIntersectingObject(Bean.class);
+        if (Bean != null)
+        {
+            Greenfoot.setWorld(new Loser());
+            Greenfoot.stop();
+        }
+    }
+    
 }
+
+    
+    

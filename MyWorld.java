@@ -11,7 +11,7 @@ public class MyWorld extends World
 
     /**
      * Constructor for objects of class MyWorld.
-     * 153, 324
+     * 943, 111
      */
     public MyWorld()
     {    
@@ -21,11 +21,11 @@ public class MyWorld extends World
         Slime Slime = new Slime();
         addObject(Slime, 20, 595);
         
-        addObject( new Bean(),966, 455 );
+        addObject( new Bean(),966, 455);
         addObject( new Bean(),153, 324);
         
         
-        
+        addObject(new Home(), 943, 111);
         
         addObject(new Platform(), 107, 630);
         addObject( new Platform(), 324, 632);

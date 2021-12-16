@@ -24,7 +24,6 @@ public class Bean extends Actor
         if(isTouching(Slime.class))
         {
             removeTouching(Slime.class);
-            Greenfoot.stop();
         }
     }
     
