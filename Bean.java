@@ -8,7 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bean extends Actor
 {
-    
+      private int speed = 7;
+      private int vSpeed = 1;
+      private int acceleration = 0;
+      private int jumpStrength = 20;
     
     /**
      * Act - do whatever the Bean wants to do. This method is called whenever
@@ -17,6 +20,9 @@ public class Bean extends Actor
     public void act()
     {
         killSlime();
+        fall();
+        onGround();
+        checkFall();
     }
 
     private void killSlime()
@@ -27,7 +33,28 @@ public class Bean extends Actor
         }
     }
     
-        
+         public boolean onGround()
+    {
+        Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Platform.class);
+         return under != null;
+    }
+    
+    
+        public void fall()
+    {
+        setLocation (getX(), getY() + vSpeed);
+        vSpeed += acceleration;
+    }    
 
-
+    public void checkFall()
+    {
+        if(onGround())
+        {
+            vSpeed = 0;
+        }
+        else
+        {
+            fall();
+        }
+    }
 }

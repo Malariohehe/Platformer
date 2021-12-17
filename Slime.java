@@ -11,7 +11,7 @@ public class Slime extends Actor
   private int speed = 7;
   private int vSpeed = 1;
   private int acceleration = 1;
-  private int jumpStrength = 20;
+  private int jumpStrength = 17;
     /**
      */
     public void act() 
@@ -68,14 +68,14 @@ public class Slime extends Actor
 
 
     {
-	for (int i = 0; i < vSpeed; i++)
-	{
-		Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Platform.class);
-		if (under != null)
-		{
-			vSpeed = i;
-		}
-	}
+        for (int i = 0; i < vSpeed; i++)
+        {
+        Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Platform.class);
+        if (under != null)
+        {
+            vSpeed = i;
+        }
+        }
     }
     
      public void jump()
@@ -116,6 +116,12 @@ public class Slime extends Actor
     {
         Actor Bean = getOneIntersectingObject(Bean.class);
         if (Bean != null)
+        {
+            Greenfoot.setWorld(new Loser());
+            Greenfoot.stop();
+        }
+        Actor Seed = getOneIntersectingObject(Seed.class);
+        if (Seed != null)
         {
             Greenfoot.setWorld(new Loser());
             Greenfoot.stop();
