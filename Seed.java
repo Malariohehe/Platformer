@@ -37,6 +37,8 @@ public class Seed extends Actor
         if (isTouching(Slime.class))
         {
             removeTouching(Slime.class);
+            Greenfoot.setWorld(new Loser());
+            Greenfoot.stop(); 
         }
     }
     

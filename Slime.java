@@ -155,12 +155,6 @@ public class Slime extends Actor
             Greenfoot.setWorld(new Loser());
             Greenfoot.stop();
         }
-        Actor Seed = getOneIntersectingObject(Seed.class);
-        if (Seed != null)
-        {
-            Greenfoot.setWorld(new Loser());
-            Greenfoot.stop();
-        }
     }
     public void huh()
     {
