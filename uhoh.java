@@ -1,21 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Loser here.
+ * Write a description of class uhoh here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Loser extends World
+public class uhoh extends World
 {
 
     /**
-     * Constructor for objects of class Loser.
-     * displays when you die to an enemy
+     * Constructor for objects of class uhoh.
+     * 
      */
-    public Loser()
+    public uhoh()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(1500, 650, 1); 
     }
 }

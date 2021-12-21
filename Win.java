@@ -11,7 +11,7 @@ public class Win extends World
 
     /**
      * Constructor for objects of class Win.
-     * 
+     * Displays when reaching home.
      */
     public Win()
     {    

@@ -11,17 +11,25 @@ public class MyWorld extends World
 
     /**
      * Constructor for objects of class MyWorld.
-     * 637, 549
+     * used to set the location of all the enemies, the slime,
+     * and all of the platforms.
      */
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 650, 1); 
-
-        Slime Slime = new Slime();
+        prepare();
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+                Slime Slime = new Slime();
         addObject(Slime, 20, 595);
 
-        addObject( new Bean(),898, 455);
+        addObject( new Bean(),892, 457);
         addObject( new Bean(),207, 324);
         addObject( new Bean(),637, 549);
         addObject( new Bean(),379, 65);
@@ -43,13 +51,6 @@ public class MyWorld extends World
         addObject( new Platform(),619, 184);
         addObject( new Platform(),836, 184);
         addObject( new Platform(),998, 184);
-        prepare();
-    }
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
+        addObject( new huh(), 50, 369);
     }
 }

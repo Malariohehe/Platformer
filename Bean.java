@@ -24,7 +24,11 @@ public class Bean extends Actor
         onGround();
         checkFall();
     }
-
+    /**
+     * Used to get rid of the slime when touching bean,
+     * so that when lose screen is 
+     * diplayed the slime is not there.
+     */
     private void killSlime()
     {
         if(isTouching(Slime.class))
@@ -32,6 +36,9 @@ public class Bean extends Actor
             removeTouching(Slime.class);
         }
     }
+    /**
+     * Used to check if the slime is on the ground or not.
+     */
     
          public boolean onGround()
     {
@@ -39,13 +46,18 @@ public class Bean extends Actor
          return under != null;
     }
     
-    
+    /**
+     * Used to make the bean fall.
+     */
         public void fall()
     {
         setLocation (getX(), getY() + vSpeed);
         vSpeed += acceleration;
     }    
-
+    /**
+     * Checks if the bean is on the ground if it is, it will not fall
+     * if the bean is not on the ground it will fall.
+     */
     public void checkFall()
     {
         if(onGround())

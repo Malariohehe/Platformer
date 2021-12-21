@@ -18,7 +18,10 @@ public class Seed extends Actor
         reset();
         killSlime();
     }
-    
+    /**
+     * if the seed hits a certain x position 
+     * it will reset to it's previous location
+     */
     public void reset()
     {
         if (getX() >= 999)
@@ -26,7 +29,9 @@ public class Seed extends Actor
             setLocation(1, 221);
         }
     }
-    
+    /**
+     * used to get rid of the slime if they are touching
+     */
     public void killSlime()
     {
         if (isTouching(Slime.class))
