@@ -30,7 +30,8 @@ public class Seed extends Actor
         }
     }
     /**
-     * used to get rid of the slime if they are touching
+     * used to get rid of the slime if they are touching,
+     * quick fix to get sent to loser world after hitting the seed.
      */
     public void killSlime()
     {

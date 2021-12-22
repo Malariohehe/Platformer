@@ -144,8 +144,10 @@ public class Slime extends Actor
         }
     }
     /**
-     * if the slime is intersecting the bean or seed
+     * if the slime is intersecting the bean
      * it sets the world to the lose screen and greenfoot stops running.
+     * (had to get rid of seed because it would only work half the time
+     * because of the hitbox.)
      */
     public void lose()
     {
